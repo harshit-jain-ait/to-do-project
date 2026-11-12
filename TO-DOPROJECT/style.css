@@ -1,0 +1,328 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100%;
+    width: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+
+    background:
+        radial-gradient(ellipse at 80% 20%, #19191f 0%, transparent 45%),
+        radial-gradient(ellipse at 10% 80%, #141419 0%, transparent 40%),
+        #080809;
+
+    color: #f5f5f5;
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+}
+
+/* Main glass container */
+main {
+    width: 100%;
+    max-width: 1050px;
+    min-height: 400px;
+
+    padding: 38px 48px;
+
+    background: rgba(20, 20, 24, 0.55);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 38px;
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.5),
+        inset 0 1px 1px rgba(255, 255, 255, 0.08);
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    width: 65px;
+    height: 65px;
+
+    border: 3px solid #e9e9ed;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 42px;
+    font-weight: 400;
+    color: white;
+
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
+}
+
+.heading h1 {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.8px;
+}
+
+.heading p {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #92929b;
+}
+
+
+/* Input section */
+.get-task {
+    width: 100%;
+    height: 88px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 8px 10px 8px 25px;
+
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.17);
+    border-radius: 28px;
+
+    transition: border 0.3s ease;
+}
+
+.get-task:focus-within {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.plus {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+
+    color: #aaaab3;
+    font-size: 28px;
+}
+
+input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+
+    background: transparent;
+    border: none;
+    outline: none;
+
+    color: white;
+    font-size: 17px;
+    font-family: inherit;
+}
+
+input::placeholder {
+    color: #777780;
+}
+
+/* Add task button */
+button {
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+#addbtn {
+    padding: 17px 28px;
+
+    background: #f5f5f5;
+    color: #111;
+
+    border: none;
+    border-radius: 20px;
+
+    font-size: 16px;
+    font-weight: 650;
+
+    white-space: nowrap;
+}
+
+#addbtn:hover {
+    background: #dcdce2;
+    transform: translateY(-2px);
+}
+
+#addbtn:active {
+    transform: scale(0.97);
+}
+
+/* Task list */
+.list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* Individual task */
+.list-item {
+    min-height: 88px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 15px 18px 15px 28px;
+
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 26px;
+
+    transition: all 0.3s ease;
+}
+
+.list-item:hover {
+    background: rgba(255, 255, 255, 0.065);
+    border-color: rgba(255, 255, 255, 0.16);
+    transform: translateY(-2px);
+}
+
+.list-item p {
+    font-size: 19px;
+    font-weight: 500;
+    color: #eeeeef;
+}
+
+/* Task buttons */
+.list-item .btns {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.list-item .btns button {
+    padding: 15px 23px;
+    border: none;
+    border-radius: 22px;
+
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* Delete */
+.list-item .btns button:first-child {
+    background: rgba(220, 38, 38, 0.17);
+    color: #ff6262;
+}
+
+.list-item .btns button:first-child:hover {
+    background: rgba(220, 38, 38, 0.3);
+}
+
+/* Done */
+.list-item .btns #comp {
+    background: rgba(5, 150, 90, 0.17);
+    color: #45e3a3;
+}
+
+.list-item .btns #comp:hover {
+    background: rgba(5, 150, 90, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 650px) {
+    body {
+        padding: 15px;
+    }
+
+    main {
+        padding: 25px 18px;
+        border-radius: 25px;
+        gap: 25px;
+    }
+
+    .logo {
+        width: 48px;
+        height: 48px;
+        font-size: 30px;
+    }
+
+    .heading h1 {
+        font-size: 21px;
+    }
+
+    .heading p {
+        font-size: 12px;
+    }
+
+    .get-task {
+        height: 68px;
+        padding: 7px 8px 7px 12px;
+        gap: 8px;
+        border-radius: 20px;
+    }
+
+    .plus {
+        display: none;
+    }
+
+    input {
+        font-size: 14px;
+    }
+
+    #addbtn {
+        padding: 13px 14px;
+        font-size: 13px;
+        border-radius: 15px;
+    }
+
+    .list-item {
+        padding: 13px;
+        min-height: 75px;
+        border-radius: 20px;
+    }
+
+    .list-item p {
+        font-size: 15px;
+    }
+
+    .list-item .btns {
+        gap: 6px;
+    }
+
+    .list-item .btns button {
+        padding: 11px 12px;
+        font-size: 12px;
+        border-radius: 14px;
+    }
+}
+
+@media (max-width: 380px) {
+    .list-item {
+        flex-wrap: wrap;
+    }
+
+    .list-item .btns {
+        margin-left: auto;
+    }
+}
